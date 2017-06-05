@@ -80,8 +80,8 @@ $VM_name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter a server name", 
  ########################
 ########################
 # Deploy credentials
-$user = "mybofi\SVC_DEPLOY"
-$password = "1x20n^d8A`$SPWWI0dR76"
+$user = 
+$password = 
 
 
 ########################
@@ -91,7 +91,7 @@ $password = "1x20n^d8A`$SPWWI0dR76"
 
 Add-PsSnapin VMware.VimAutomation.Core -ea "SilentlyContinue"
 
-$array = "BOFI-VCENTER2", "SD-MGT-SSO-1-1"
+$array = #PUT VCENTER SERVERS HERE
 for($count=0;$count -lt $array.length; $count++)
 {
 # Connect to vCenter
@@ -325,11 +325,11 @@ $time = (Get-Date).Adddays(-($DaysInactive))
 $html = $VM_name
 
 $paramHash = @{
- To = "eric@bofi.com"
- from = "VMCREATION@BOFI.COM"
+ To = ""
+ from = ""
  BodyAsHtml = $True
  Body = $html
- SmtpServer = "ironport.mybofi.local" 
+ SmtpServer = "" 
  #Port = 587
  Subject = "Server Finished"
 }
